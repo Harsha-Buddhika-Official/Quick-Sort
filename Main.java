@@ -1,6 +1,16 @@
+import java.util.Scanner;
+
 class Main{
     public static void main(String[] args) {
-        int[] array = {5, 2, 9, 1, 5, 6};
+        Scanner Sc = new Scanner(System.in);
+        System.out.print("Enter the number of elements: ");
+        int n = Sc.nextInt();
+        int[] array = new int[n];
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < n; i++) {
+            array[i] = Sc.nextInt();
+        }
+        Sc.close();
         quickSort(array, 0, array.length - 1);
         for (int i : array) {
             System.out.print(i + " ");
