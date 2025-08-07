@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 class Main{
     public static void main(String[] args) {
+
+        //user inputs array
         Scanner Sc = new Scanner(System.in);
         System.out.print("Enter the number of elements: ");
         int n = Sc.nextInt();
@@ -11,7 +13,10 @@ class Main{
             array[i] = Sc.nextInt();
         }
         Sc.close();
+
+        //quick sort
         quickSort(array, 0, array.length - 1);
+        System.out.println("Sorted array:");
         for (int i : array) {
             System.out.print(i + " ");
         }
@@ -20,7 +25,9 @@ class Main{
     public static void quickSort(int[] arr, int low, int high){
         if(low < high){
             int p = partition(arr, low, high);
+            // left side of pivot
             quickSort(arr, low, p-1);
+            // right side of pivot
             quickSort(arr, p+1, high);
         }
     }
